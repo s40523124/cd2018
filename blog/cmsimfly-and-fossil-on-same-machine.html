@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>CMSimfly 與 Fossil SCM</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://kmolab.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://kmolab.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="機械設計工程系 KMOLab Full Atom Feed" />
+          <link href="https://kmolab.github.io/blog/feeds/research.atom.xml" type="application/atom+xml" rel="alternate" title="機械設計工程系 KMOLab Categories Atom Feed" />
+
+  <link href="https://kmolab.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://kmolab.github.io/blog/theme/css/code_blocks/tomorrow_night.css" rel="stylesheet">
+
+  
+    <link href="https://kmolab.github.io/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+    <link href="https://kmolab.github.io/blog/cmsimfly-and-fossil-on-same-machine.html" rel="canonical" />
+
+        <meta name="description" content="CMSimfly 是一套採用 Flask 應用程式框架編寫的網際內容管理系統 (Content Management System), Fossil SCM 則是以 ANSI C 編寫的軟體組態管理 (Software Configuration Management)...">
+
+        <meta name="author" content="yen">
+
+        <meta name="tags" content="2017fall">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="機械設計工程系 KMOLab"/>
+<meta property="og:title" content="CMSimfly 與 Fossil SCM"/>
+<meta property="og:description" content="CMSimfly 是一套採用 Flask 應用程式框架編寫的網際內容管理系統 (Content Management System), Fossil SCM 則是以 ANSI C 編寫的軟體組態管理 (Software Configuration Management)..."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://kmolab.github.io/blog/cmsimfly-and-fossil-on-same-machine.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-10-01 11:00:00+08:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://kmolab.github.io/blog/author/yen.html">
+<meta property="article:section" content="Research"/>
+<meta property="article:tag" content="2017fall"/>
+<meta property="og:image" content="https://kmolab.github.io/blog/theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "CMSimfly 與 Fossil SCM",
+  "headline": "CMSimfly 與 Fossil SCM",
+  "datePublished": "2017-10-01 11:00:00+08:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "yen",
+    "url": "https://kmolab.github.io/blog/author/yen.html"
+  },
+  "image": "https://kmolab.github.io/blog/theme/images/post-bg.jpg",
+  "url": "https://kmolab.github.io/blog/cmsimfly-and-fossil-on-same-machine.html",
+  "description": "CMSimfly 是一套採用 Flask 應用程式框架編寫的網際內容管理系統 (Content Management System), Fossil SCM 則是以 ANSI C 編寫的軟體組態管理 (Software Configuration Management)..."
+}
+</script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushLua.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "./../data/syntaxhighlighter/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "./../data/syntaxhighlighter/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+<!-- for LaTeX equations -->
+<script src="./../data/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+              <li role="presentation"><a href="https://kmolab.github.io/blog/pages/about/">About</a></li>
+
+            <li><a href="https://kmolab.github.io/blog/archives.html">Archives</span></a></li>
+            
+            <li><a href="https://kmolab.github.io/blog/categories.html">Categories</span></a></li>
+            
+            <li><a href="https://kmolab.github.io/blog/tags.html">Tags</span></a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="post-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://kmolab.github.io/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+        <h1 class="post-title">CMSimfly 與 Fossil SCM</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="https://kmolab.github.io/blog/author/yen.html">Yen</a>
+            | <time datetime="Sun 01 October 2017">Sun 01 October 2017</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <div class="post-cover cover" style="background-image: url('https://kmolab.github.io/blog/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<section class="search">
+      <form class="navbar-search" action="https://kmolab.github.io/blog/search.html">
+      <input type="text"  placeholder="Search" name="q" id="tipue_search_input" required>
+    </form>
+</section>
+
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p><a href="https://github.com/chiamingyen/cmsimfly">CMSimfly</a> 是一套採用 Flask 應用程式框架編寫的網際內容管理系統 (Content Management System),  <a href="https://www.fossil-scm.org">Fossil SCM</a> 則是以 ANSI C 編寫的軟體組態管理 (Software Configuration Management) 系統, 兩套程式各有不同的特色, CMSimfly 適合用來管理無版次的大型檔案, 而 Fossil SCM 則可用來記錄詳細的軟體設計開發歷程.</p>
+
+
+<h2>CMSimfly 與 Fossil SCM 安裝規劃</h2>
+<p>CMSimfly 採用 Python3 與 Flask 編寫, 可以採用 <a href="https://github.com/unbit/uwsgi">uwsgi</a> 模組啟動, 預計網際前端透過 Nginx https 埠號 8443 承接來自瀏覽器的請求, 而 Fossil SCM 的 http port 80 前端則由 Nginx 承接後, 直接跳轉 Stunnel 所代理的 https 服務. 因此當使用者以瀏覽器 http 連線, 伺服器會馬上跳轉 https 的 Fossil SCM, 假如要連結 CMSimfly, 則必須以 https 8443 連線.</p>
+<p><a href="https://github.com/unbit/uwsgi">uwsgi</a> 有多種啟動方式, 在此希望透過 Emperor 的多應用程式的模式啟動, 基本架構是,  uwsgi 指令在 /etc/rc.local 中以 exec 執行, 可以在伺服器開機時執行, 而 uwsgi Emperor  中指定以一般用戶身分執行, 實際封包在內部網路的 8081 啟動, 之後透過 /etc/nginx/sites-available/default 中的 server 設定, 只接受 8443 埠號的 IPv4 與 IPv6 網際瀏覽器請求.</p>
+<h2>CMSimfly 安裝設定</h2>
+<p>根據 uwsgi 與 Emperor 的啟動, 伺服器所需模組, 包括 pip3, Flask, python3 開發環境, uwsgi, nginx 與 uwsgi-plugin-python3 模組:</p>
+<pre class="brush: python">
+sudo apt install python3-pip
+sudo pip3 install Flask
+sudo apt install build-essential python3-dev
+sudo pip3 install uwsgi
+sudo apt install nginx uwsgi-plugin-python3
+</pre>
+
+<p>而 /etc/nginx/sites-available/default 的設定</p>
+<pre class="brush:python">
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name _;
+        return 301 https://my.server.host.name;
+}
+
+server {
+    listen 8443 ssl;
+    listen [::]:8443 ssl;
+
+    location /static {
+        alias /home/user/cmsimfly/static/;
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass  127.0.0.1:8081;
+    }
+
+    server_name my.server.host.name;
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_prefer_server_ciphers on;
+    try_files $uri $uri/ =404;
+}
+</pre>
+
+<p>位於 /home/user/uwsgi_ini/ 目錄下的 uwsgi.ini 檔案設定:</p>
+<pre class="brush: python">
+[uwsgi]
+socket = 127.0.0.1:8081 
+uid = user
+gid = user
+plugins-dir = /usr/lib/uwsgi/plugins/
+plugin = python3
+master = true
+process = 4
+threads = 2
+chdir = /home/user/cmsimfly
+wsgi-file = /home/user/cmsimfly/wsgi.py
+</pre>
+
+<p>假如希望額外啟動其他的 uwsgi 程式, 例如第二組 CMSimfly 或其他對應的 Flask 應用程式, 則需要在 /etc/nginx/sites-available/default 增加另外一組 server 設定, 主要在選定內部網路的特定埠號, 例如: 127.0.0.1:8082, 編寫 default 設定檔案成為:</p>
+<pre class="brush:python">
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    server_name _;
+        return 301 https://my.server.host.name;
+}
+
+server {
+    listen 8443 ssl;
+    listen [::]:8443 ssl;
+
+    location /static {
+        alias /home/user/cmsimfly/static/;
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass  127.0.0.1:8081;
+    }
+
+    server_name my.server.host.name;
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_prefer_server_ciphers on;
+    try_files $uri $uri/ =404;
+}
+
+server {
+    listen 9443 ssl;
+    listen [::]:9443 ssl;
+
+    location /static {
+        alias /home/user/cmsimfly2/static/;
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass  127.0.0.1:8082;
+    }
+
+    server_name my.server.host.name;
+    ssl on;
+    ssl_certificate /etc/nginx/ssl/nginx.crt;
+    ssl_certificate_key /etc/nginx/ssl/nginx.key;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_prefer_server_ciphers on;
+    try_files $uri $uri/ =404;
+}
+</pre>
+
+<p>然後在 /home/user/uwsgi_ini 目錄中, 再配合增加一組 uwsgi2.ini, 內容為:</p>
+<pre class="brush: python">
+[uwsgi]
+socket = 127.0.0.1:8082
+uid = user
+gid = user
+plugins-dir = /usr/lib/uwsgi/plugins/
+plugin = python3
+process = 4
+threads = 2
+chdir = /home/user/cmsimfly2
+wsgi-file = /home/user/cmsimfly2/wsgi.py
+</pre>
+
+<p>/etc/nginx/sites-available/default 與 /home/user/uwsgi_ini/uwsgi2.ini 設定修改後, 只要透過 /etc/init.d/nginx restart 重新啟動 Nginx, 並且重新執行 uwsgi 指令, 意即, uwsgi --emperor /home/user/uwsgi_ini, 納入 /home/user/uwsgi_ini/uwsgi.ini 與 /home/user/uwsgi_ini/uwsgi2.ini 的多 uwsgi Emperor 架構應用程式即可在 https://my.sever.host.name:9443 多一組 CMSimply 網際內容管理的伺服.</p>
+<p>若要讓伺服器在開機時執行 uwsgi, 則需要在/etc/rc.local 加入:</p>
+<p>exec uwsgi --emperor /home/user/uwsgi_ini</p>
+<p>過程中若需要重新啟動 nginx, 以 /etc/init.d/nginx restart 執行.</p>
+<h2>Fossil SCM 與 Stunnel 聯合啟動</h2>
+<p>因為在 Nginx /etc/nginx/sites-available/default 中已經將 port 80 的回應處理直接透過 http 301 狀態碼的宣告, 永久轉接到 https://my.server.host.name, 因此只要透過 Stunnel 代理在標準的 IPv4 與 IPv6 網路協定中, 以 https 啟動 Fossil SCM 即可.</p>
+<p>首先要安裝 Stunnel 與 Fossil SCM:</p>
+<pre class="brush: python">
+sudo apt update
+sudo apt install stunnel4 -y
+sudo apt install fossil
+</pre>
+
+<p>讓 Stunnel 開機時啟動:</p>
+<p>/etc/default/stunnel4 檔案設定, 將原先內定的 ENABLED=0 改為 1:</p>
+<p>ENABLED=1</p>
+<p>因為要以 https 設定 /etc/stunnel/stunnel.conf, 因此 /etc/stunnel 目錄中需要 stunnel.crt 與 stunnel.key.</p>
+<p>在 /etc/stunnel 目錄中執行 openssl 指令:</p>
+<p>sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout stunnel.key -out stunnel.crt</p>
+<p>然後設定 /etc/stunnel/stunnel.conf:</p>
+<pre class="brush: python">
+[https]
+accept = your.ipv4.ip:443
+accept = :::443
+cert = /etc/stunnel/localhost.crt
+key = /etc/stunnel/localhost.key
+exec = /usr/bin/fossil
+execargs = /usr/bin/fossil http /home/user/ --https --nojail --notfound default
+</pre>
+
+<p>重新啟動 stunnel 時, 執行 /etc/init.d/stunnel4</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=CMSimfly 與 Fossil SCM&amp;url=https://kmolab.github.io/blog/cmsimfly-and-fossil-on-same-machine.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://kmolab.github.io/blog/cmsimfly-and-fossil-on-same-machine.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=https://kmolab.github.io/blog/cmsimfly-and-fossil-on-same-machine.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="https://kmolab.github.io/blog/tag/2017fall.html">2017fall</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+                <script type="text/javascript">
+                    var disqus = 'kmolab-github';
+                    var disqus_shortname = 'kmolab-github';
+                    var disqus_identifier = '/cmsimfly-and-fossil-on-same-machine.html';
+                    var disqus_url = 'https://kmolab.github.io/blog/cmsimfly-and-fossil-on-same-machine.html';
+                </script>
+                <noscript>Please enable JavaScript to view the comments.</noscript>
+                <section class="post-comments">
+                        <a id="show-disqus" class="post-comments-activate" data-disqus-identifier="/cmsimfly-and-fossil-on-same-machine.html" >Show Comments</a>
+                    <div id="disqus_thread"></div>
+                </section>
+
+                <aside class="post-nav">
+                    <a class="post-nav-next" href="https://kmolab.github.io/blog/brython-programming-environment.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-left"></i>
+                                <h2 class="post-nav-title">Brython 3.3.4 程式環境</h2>
+                            <p class="post-nav-excerpt">利用 Brython 與 Ace 編輯器, 建立瀏覽器上的簡單 Python3 程式練習環境.</p>
+                        </section>
+                    </a>
+                    <a class="post-nav-prev" href="https://kmolab.github.io/blog/2017fall-srver-setup.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-right"></i>
+                                <h2 class="post-nav-title">2017 Fall 主機設定</h2>
+                            <p class="post-nav-excerpt">在 2017 年 Spring, 電腦輔助設計室購入兩台 HP 伺服器, 分別是 HPE ProLiant ML10 Gen9 Server 與 HPE ProLiant...</p>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+  
+  <script type="text/javascript" src="https://kmolab.github.io/blog/theme/js/script.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'kmolab-github';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+ 
+
+
+</body>
+</html>

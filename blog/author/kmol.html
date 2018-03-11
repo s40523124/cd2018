@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+
+  <title>機械設計工程系 KMOLab - Articles by kmol</title>
+
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="origin" />
+  <meta name="generator" content="Pelican" />
+  <link href="https://kmolab.github.io/blog/" rel="canonical" />
+
+  <!-- Feed -->
+        <link href="https://kmolab.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="機械設計工程系 KMOLab Full Atom Feed" />
+
+  <link href="https://kmolab.github.io/blog/theme/css/style.css" type="text/css" rel="stylesheet" />
+
+  <!-- Code highlight color scheme -->
+      <link href="https://kmolab.github.io/blog/theme/css/code_blocks/tomorrow_night.css" rel="stylesheet">
+
+  
+    <link href="https://kmolab.github.io/blog/theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,300' rel='stylesheet' type='text/css' />
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css" />
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="機械設計工程系 KMOLab"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="機械設計工程系 KMOLab"/>
+<meta property="og:description" content="View the blog."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="https://kmolab.github.io/blog/"/>
+<meta property="og:image" content="https://kmolab.github.io/blog/theme/images/home-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Website",
+  "name": " 機械設計工程系 KMOLab ",
+  "url" : "https://kmolab.github.io/blog/",
+  "image": "https://kmolab.github.io/blog/theme/images/home-bg.jpg",
+  "description": "View the blog."
+}
+</script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../data/syntaxhighlighter/shBrushLua.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "./../data/syntaxhighlighter/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "./../data/syntaxhighlighter/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+<!-- for LaTeX equations -->
+<script src="./../data/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+</head>
+<!-- TODO : Body class -->
+<body class="home-template">
+
+<nav id="menu">
+  <a class="close-button">Close</a>
+  <div class="nav-wrapper">
+    <p class="nav-label">Menu</p>
+    <ul>
+
+              <li role="presentation"><a href="https://kmolab.github.io/blog/pages/about/">About</a></li>
+
+            <li><a href="https://kmolab.github.io/blog/archives.html">Archives</span></a></li>
+            
+            <li><a href="https://kmolab.github.io/blog/categories.html">Categories</span></a></li>
+            
+            <li><a href="https://kmolab.github.io/blog/tags.html">Tags</span></a></li>
+
+    </ul>
+  </div>
+</nav>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header id="blog-header" class="has-cover">
+      <div class="inner">
+        <nav id="navigation">
+            <span id="home-button" class="nav-button">
+                <a class="home-button" href="https://kmolab.github.io/blog/" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+            </span>
+          <span id="menu-button" class="nav-button">
+            <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+          </span>
+        </nav>
+            <div class="post-cover cover" style="background-image: url('https://kmolab.github.io/blog/theme/images/post-bg.jpg')">
+      </div>
+    </header>
+
+
+
+  <section id="wrapper">
+    <a class="hidden-close"></a>
+
+<section class="search">
+      <form class="navbar-search" action="https://kmolab.github.io/blog/search.html">
+      <input type="text"  placeholder="Search" name="q" id="tipue_search_input" required>
+    </form>
+</section>
+
+
+<div id="index" class="container">
+  <main class="content" role="main">
+    <div class="extra-pagination">
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+    </div>
+
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/wcm-course-1.html" rel="bookmark" title="Permalink to 網際內容管理">網際內容管理</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Sun 18 June 2017">Sun 18 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>網際內容管理課程在教導學生, 利用電腦與網路軟硬體配置, 完成各項與機械設計內容管理有關的任務.</p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/wcm-course-1.html" href="https://kmolab.github.io/blog/wcm-course-1.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/cd-course-1.html" rel="bookmark" title="Permalink to 協同產品設計實習">協同產品設計實習</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Sun 18 June 2017">Sun 18 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>協同產品設計課程在教導學生, 以同步或非同步協同方式, 利用電腦軟體完成各項與機械設計運算與模擬流程有關的任務.</p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/cd-course-1.html" href="https://kmolab.github.io/blog/cd-course-1.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/cadp-course-1.html" rel="bookmark" title="Permalink to 電腦輔助設計實習">電腦輔助設計實習</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Sun 18 June 2017">Sun 18 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>電腦輔助設計課程在教導學生利用電腦軟體完成各項與機械設計運算與模擬流程有關的任務.</p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/cadp-course-1.html" href="https://kmolab.github.io/blog/cadp-course-1.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/cp-course-1.html" rel="bookmark" title="Permalink to 計算機程式">計算機程式</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Mon 12 June 2017">Mon 12 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>計算機程式課程在教導學生利用電腦完成各項與機械設計流程有關的任務.</p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/cp-course-1.html" href="https://kmolab.github.io/blog/cp-course-1.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/first-discussion-blog.html" rel="bookmark" title="Permalink to 大學生為何不來上課?">大學生為何不來上課?</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Mon 05 June 2017">Mon 05 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>大學生不願進教室上課的原因很多, 學費太低? 學不到東西? 完全跟不上進度? 老師太混? 上與不上都差不多? 實在爬不起來? 沒有人叫我起床? </p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/first-discussion-blog.html" href="https://kmolab.github.io/blog/first-discussion-blog.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/first-misc-blog.html" rel="bookmark" title="Permalink to 其他">其他</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Mon 05 June 2017">Mon 05 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>不在設置, 模擬, 實作與論述類別的內容, 則放入雜項其他類別</p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/first-misc-blog.html" href="https://kmolab.github.io/blog/first-misc-blog.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/first-realization-blog.html" rel="bookmark" title="Permalink to 實作">實作</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Mon 05 June 2017">Mon 05 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>紀錄與實作有關的內容, 實體製作</p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/first-realization-blog.html" href="https://kmolab.github.io/blog/first-realization-blog.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/first-simulation-blog.html" rel="bookmark" title="Permalink to 電腦模擬">電腦模擬</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Mon 05 June 2017">Mon 05 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>紀錄與電腦模擬相關內容與紀錄， 使用工具 Python3, <a href="http://www.robodk.com/download">RoboDK</a> (<a href="https://robodk.com/doc/en/RoboDK-API.html">RoboDK API</a>)</p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/first-simulation-blog.html" href="https://kmolab.github.io/blog/first-simulation-blog.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+        <article class="post">
+        <div class="inner">
+            <header class="post-header">         
+                <h2 class="post-title"><a href="https://kmolab.github.io/blog/first-setup-blog.html" rel="bookmark" title="Permalink to 軟硬體設置">軟硬體設置</a>
+                </h2>
+                <span class="post-meta">
+                        <a href="https://kmolab.github.io/blog/author/kmol.html">Kmol</a>
+                     | <time datetime="Mon 05 June 2017">Mon 05 June 2017</time>
+                </span>
+                <div class="clear"></div>
+            </header>
+                <section class="post-excerpt">
+                    <p>
+                        <p>紀錄電腦與網路的軟硬體相關設置</p>
+
+                    </p>
+                </section>
+<p>
+  <a data-disqus-identifier="/first-setup-blog.html" href="https://kmolab.github.io/blog/first-setup-blog.html#disqus_thread">comments</a>
+</p>
+            </div>
+        </article>
+
+<nav class="pagination" role="pagination">
+  <div class="inner">
+    <span class="pagination-info">Page 1 / 1</span>
+    <div class="clear"></div>
+  </div>
+</nav>
+  </main>
+</div>
+      <!-- TODO : Body class -->
+    <div id="body-class" style="display: none;" class=""></div>
+
+    <footer id="footer">
+      <div class="inner">
+        <section class="credits">
+
+
+          <span class="credits-theme">Theme <a href="https://github.com/arulrajnet/attila" rel="nofollow">Attila</a></span>
+          <span class="credits-software">Published with <a href="https://github.com/getpelican/pelican" rel="nofollow">Pelican</a></span>
+        </section>
+      </div>
+    </footer>
+  </section>
+  
+  <script type="text/javascript" src="https://kmolab.github.io/blog/theme/js/script.js"></script>
+
+<script type="text/javascript">
+    var disqus_shortname = 'kmolab-github';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+ 
+
+
+</body>
+</html>
