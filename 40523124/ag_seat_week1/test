@@ -1,0 +1,167 @@
+`https://vimeo.com/187297037`
+***
+'''print('ander awesome')
+'''
+#a = type('s')
+#print(a)
+'''
+***
+with open ('2a.txt') as a:
+    b = a.readlines()
+    if 
+    print(b)'''
+
+#test1
+'''a = int(input('數字一: '))
+b = int(input('數字二: '))
+O = input('運算方式:')
+if O == ('*'):
+    print(a*b)
+else:
+    print('fuck you bitch')'''
+
+#test2
+'''with open ('2a.txt') as a:
+    #b = a.readlines()
+    c = a.read()
+    print(c)'''
+    
+#test3
+C = int(input(':'))
+if C == int : 
+    for A in range(C):
+        print('第', A ,'組')
+else :
+    print('NG')
+
+***
+#test4
+a=[36,25,9,]
+print('3次成績: ', end='')
+for grade in a:
+    print(grade, end=' ')
+print(end='\n')
+average = sum(a)/len(a)
+print('3次平均: ',end='')
+print(average)
+print('新成績: ', end='')
+for grade in range(0,len(a)):
+    a[grade] = a[grade]**0.5*5
+    print(a[grade],end=' ')
+print(end='\n')
+nav = sum(a)
+print('新3次平均: ', end='')
+print(nav)
+***
+#test5
+第8組 40523124 練習利用python 將座位表分組
+[第8組倉儲](https://github.com/s40523124/cd2018)
+
+#用with 開起資料 並以'fl'為名進行逐行讀取 動作
+with open ('2a.txt') as fl:
+    da = fl.readlines()
+#將2a.txt資料中的'換行'字符轉換成無字元
+#'d'為轉換的名義，以for 定義'd'的範圍
+    da = [d.replace('\n', '') for d in da]
+#創造新字串
+z = 0
+#讓'i'成為迴圈
+##print(da)
+for i in range(len(da)):
+#以資料中的行數為次數,分割為多個區塊的list
+    daz = da[i].split( )
+    ##print(daz)
+#將daz中的特殊字元去除
+    gg = [d.strip( ) for d in daz]
+    ##print(gg)
+#如果i/3商數為0時
+    for i in range(len(gg)):
+        if i%3 == 0:
+            z += 1
+#str(數字)行成字串，字串 + 字串 = 字串字串
+            print('第' + str(z) + '組:' )
+            print(gg[i])
+        else :
+            print(gg[i])
+
+第1組:
+40523115
+40523108
+40523116
+第2組:
+40523144
+40523111
+40523141
+第3組:
+40523104
+40523102
+40523123
+第4組:
+40523137
+40523117
+40523135
+第5組:
+40523147
+40523146
+40523145
+第6組:
+40523122
+40523136
+40523132
+第7組:
+40523127
+40523126
+40523125
+第8組:
+40523124
+40523118
+40523131
+第9組:
+40523121
+40523120
+40523119
+第10組:
+40523105
+40523106
+40523107
+第11組:
+40523143
+40523128
+40523129
+第12組:
+40523130
+40523139
+40523133
+第13組:
+40523142
+40523148
+40523140
+第14組:
+40523113
+40523138
+***
+***
+#test6
+'''
+d = {}
+for a in range(3):
+    k = input('帳號: ')
+    v = str(input('密碼: '))
+    d[k] = v
+for i in d:
+    if d[i] == 'fuck':
+        print(i, ': ', d[i])
+        break
+    else:
+        print('no find')
+'''
+#test7
+'''
+for a in range(5):
+    if a <= 2 :
+        print(a)
+    else:
+        print(a)
+        break
+'''
+***
