@@ -22,48 +22,34 @@
 <v t="yen.20170108171733.6"><vh>@edit local_publishconf.py</vh></v>
 <v t="yen.20170108171733.7"><vh>@edit pelicanconf.py</vh></v>
 </v>
-<v t="yen.20170224232341.1" a="E"><vh>編輯 template</vh>
-<v t="yen.20170224232341.2" a="E"><vh>@path theme/pelican-bootstrap3_local/templates</vh>
+<v t="yen.20170224232341.1"><vh>編輯 template</vh>
+<v t="yen.20170224232341.2"><vh>@path theme/pelican-bootstrap3_local/templates</vh>
 <v t="yen.20170224232341.3"><vh>@edit base.html</vh></v>
 </v>
 </v>
-<v t="yen.20170108171733.8" a="E"><vh>@clean index.html</vh>
-<v t="yen.20170108171733.9" a="E"><vh>html</vh>
+<v t="yen.20170108171733.8"><vh>@clean index.html</vh>
+<v t="yen.20170108171733.9"><vh>html</vh>
 <v t="yen.20170108171733.10"><vh>head</vh></v>
-<v t="yen.20170108171733.11" a="E"><vh>body</vh>
-<v t="yen.20170108171733.12" a="E"><vh>reveal div</vh>
-<v t="yen.20170108171733.13" a="E"><vh>slides div</vh>
-<v t="yen.20170108171733.14" a="E"><vh>封面投影片</vh>
+<v t="yen.20170108171733.11"><vh>body</vh>
+<v t="yen.20170108171733.12"><vh>reveal div</vh>
+<v t="yen.20170108171733.13"><vh>slides div</vh>
+<v t="yen.20170108171733.14"><vh>封面投影片</vh>
 <v t="yen.20170108171733.15"><vh>封面投影片內容</vh></v>
 </v>
-<v t="yen.20170108171733.16" a="E"><vh>快捷鍵</vh>
-<v t="yen.20170108171733.17"><vh>投影片快捷鍵</vh></v>
+<v t="yen.20170108171733.16"><vh>快捷鍵</vh></v>
+<v t="leo.20170623003805.1"><vh>快捷鍵</vh></v>
+<v t="yen.20170108171733.64"><vh>各式內容引用範例</vh>
+<v t="leo.20170623003503.1"><vh>newHeadline</vh></v>
+<v t="leo.20170623002815.1"><vh>newHeadline</vh></v>
+<v t="yen.20170108171733.65"><vh>導入數學符號與方程式</vh></v>
+<v t="leo.20170622234143.1"><vh>newHeadline</vh></v>
 </v>
-<v t="leo.20170623003805.1" a="E"><vh>快捷鍵</vh>
-<v t="leo.20170623003805.2"><vh>投影片快捷鍵</vh></v>
-</v>
-<v t="yen.20170108171733.64" a="E"><vh>各式內容引用範例</vh>
-<v t="leo.20170623003503.1" a="E"><vh>newHeadline</vh>
-<v t="leo.20170623003503.2"><vh>LaTeX 格式方程式</vh></v>
-</v>
-<v t="leo.20170623002815.1" a="E"><vh>newHeadline</vh>
-<v t="leo.20170623002815.2"><vh>LaTeX 格式方程式</vh></v>
-</v>
-<v t="yen.20170108171733.65" a="E"><vh>導入數學符號與方程式</vh>
-<v t="yen.20170108171733.66"><vh>LaTeX 格式方程式</vh></v>
-</v>
-<v t="leo.20170622234143.1" a="E"><vh>newHeadline</vh>
-<v t="leo.20170622231225.1"><vh>LaTeX 格式方程式</vh></v>
-</v>
-</v>
-<v t="leo.20170622234235.1" a="E"><vh>newHeadline</vh>
-<v t="yen.20170108171733.67" a="E"><vh>導入縮排程式碼</vh>
-<v t="yen.20170108171733.69" a="E"><vh>導入影片</vh>
+<v t="leo.20170622234235.1"><vh>newHeadline</vh>
+<v t="yen.20170108171733.67"><vh>導入縮排程式碼</vh>
+<v t="yen.20170108171733.69"><vh>導入影片</vh>
 <v t="yen.20170108171733.70"><vh>iframe 導入影片</vh></v>
 </v>
-<v t="leo.20170622234003.1" a="E"><vh>video</vh>
-<v t="yen.20170108171733.68"><vh>引用程式碼</vh></v>
-</v>
+<v t="leo.20170622234003.1"><vh>video</vh></v>
 </v>
 </v>
 </v>
@@ -72,7 +58,7 @@
 </v>
 </v>
 <v t="yen.20170108171733.71" a="E"><vh>@path content</vh>
-<v t="leo.20170622224243.1" a="E"><vh>40523118 所寫的網誌文章</vh>
+<v t="leo.20170622224243.1"><vh>40523118 所寫的網誌文章</vh>
 <v t="leo.20170622224243.2"><vh>@edit week  4.md</vh></v>
 </v>
 <v t="yen.20170108171733.81" a="E"><vh>@path pages</vh>
@@ -86,18 +72,6 @@
 </vnodes>
 <tnodes>
 <t tx="leo.20170622224243.1"></t>
-<t tx="leo.20170622231225.1">DNS連接到mdecourse.github.io
-CNAM:代表別名
-https://[2001:288:6004:17::7}
-學校   2001"288"6004"17::7
-           2001:booo:168::1
-proxy[2001:288:6004:17::17]
-雲端特性:彈性(工具)
-Mbr(Master Boot Record)
-SSD 固態硬碟(不旋轉)
-SCSI：小型電腦介面
-RAID：容錯式磁碟陣列（RAID，獨立磁盤冗餘陣列）
-</t>
 <t tx="leo.20170622234003.1"></t>
 <t tx="leo.20170622234143.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
@@ -116,18 +90,6 @@ RAID：容錯式磁碟陣列（RAID，獨立磁盤冗餘陣列）
     &lt;/script&gt;
 &lt;/section&gt;
 </t>
-<t tx="leo.20170623002815.2">DNS連接到mdecourse.github.io
-CNAM:代表別名
-https://[2001:288:6004:17::7}
-學校   2001"288"6004"17::7
-           2001:booo:168::1
-proxy[2001:288:6004:17::17]
-雲端特性:彈性(工具)
-Mbr(Master Boot Record)
-SSD 固態硬碟(不旋轉)
-SCSI：小型電腦介面
-RAID：容錯式磁碟陣列（RAID，獨立磁盤冗餘陣列）
-</t>
 <t tx="leo.20170623003503.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 &lt;!-- 請注意, @others 不可以內縮 --&gt;
@@ -135,13 +97,6 @@ RAID：容錯式磁碟陣列（RAID，獨立磁盤冗餘陣列）
     &lt;/script&gt;
 &lt;/section&gt;
 </t>
-<t tx="leo.20170623003503.2">機械設計:設計士一種表達，寫在{設}說清楚意別人做甚麼
-表達方式:口語.文字.2D.實際.量化
-機:很多零件組合可精巧運作的器物
-械:在一定範圍內
-設:表達清楚
-計:經考量討論
-硬體.流體.軟體:最佳化</t>
 <t tx="leo.20170623003805.1">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 @others
@@ -151,16 +106,6 @@ RAID：容錯式磁碟陣列（RAID，獨立磁盤冗餘陣列）
 
 						
 </t>
-<t tx="leo.20170623003805.2">網路線
-RJ 45
-白橙:傳送資料正極TH+
-橙:傳送資料負極TH-
-白:接收資料正極RX+
-藍:X
-白藍:X
-綠:接收資料負極RX-
-白棕:X
-棕:X</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/
@@ -237,7 +182,7 @@ QLineEdit#editorLabel {
 }</t>
 <t tx="yen.20170108171605.3">horizontal: body pane to the left
 vertical: body pane on the botton</t>
-<t tx="yen.20170108171622.1">2017 Spring WCM 機械設計工程系網際內容管理
+<t tx="yen.20170108171622.1">協同產品設計實習 第八組 報告
 
 倉儲位置: https://github.com/mdecourse/2017springwcm
 
@@ -248,7 +193,7 @@ vertical: body pane on the botton</t>
 <t tx="yen.20170108171733.10">&lt;head&gt;
     &lt;meta charset="utf-8"&gt;
 &lt;title&gt;
-2017 Spring 機械設計工程系網際內容管理
+協同產品設計實習 
 &lt;/title&gt;
     &lt;meta name="description" content="A framework for easily creating beautiful presentations using HTML"&gt;
     &lt;meta name="author" content="Hakim El Hattab"&gt;
@@ -327,15 +272,15 @@ vertical: body pane on the botton</t>
 
 						
 </t>
-<t tx="yen.20170108171733.15">## 2017Spring 網際內容管理課程
+<t tx="yen.20170108171733.15">## 協同產品設計實習 第八組 報告
 
 ### 虎科大機械設計工程系
 
 &lt;small&gt;
-Created by [林兆戎](http://chiamingyen.github.io/kmolab/blog/)
+Created by [第八組](http://chiamingyen.github.io/kmolab/blog/)
 &lt;/small&gt;
 
-[網際內容管理課程網誌](blog/index.html)
+[協同產品設計實習 網誌](blog/index.html)
 
 
 </t>
@@ -348,14 +293,6 @@ Created by [林兆戎](http://chiamingyen.github.io/kmolab/blog/)
 
 						
 </t>
-<t tx="yen.20170108171733.17"># 網路線
-
- 順序為
- 白橙   橙   白綠   藍   白藍   綠   白棕   棕(br/)
- 線材的兩邊順序要相同(br/)
- 而放入網路接頭時順序不可以亂(br/)
- 並由壓線鉗將線跟接頭卡死(br/)
- 放入電腦嘗試看可不可以連線(br/)</t>
 <t tx="yen.20170108171733.2">@language python
 import os
 #os.system("pelican content -o output -s local_publishconf.py -t theme/pelican-bootstrap3")
@@ -379,15 +316,6 @@ g.es("admin pelican 近端執行完畢")
 
 						
 </t>
-<t tx="yen.20170108171733.66">虛擬主機
-Oracle 公司:資料庫
-設定值:單一
-檔案喜好 設定:系統
-網路NAT(服務系統)
-1.NAT網路(虛擬主機可透NAT來連線)
-僅限主機網路
-設定值
-橋接介面卡(找NAT)(與外接IP一樣)</t>
 <t tx="yen.20170108171733.67">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
 &lt;!-- 請注意, @others 不可以內縮 --&gt;
@@ -398,11 +326,6 @@ Oracle 公司:資料庫
 
 
 						
-</t>
-<t tx="yen.20170108171733.68"># 安裝使用Ubuntu
-
-&lt;iframe src="https://player.vimeo.com/video/214970970" width="640" height="385" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
-&lt;p&gt;&lt;a href="https://vimeo.com/214970970"&gt;2017-06-25_13-36-36&lt;/a&gt; from &lt;a href="https://vimeo.com/user65942712"&gt;林兆戎&lt;/a&gt; on &lt;a href="https://vimeo.com"&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 </t>
 <t tx="yen.20170108171733.69">&lt;section data-markdown&gt;
     &lt;script type="text/template"&gt;
