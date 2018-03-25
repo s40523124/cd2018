@@ -1,0 +1,1 @@
+var tipuesearch = {"pages":[{"title":"About","text":"2017Spring 機械設計工程系網際內容管理 課程倉儲: http://github.com/mdecourse/2017springwcm 課程投影片: http://mdecourse.github.io/2017springwcm 課程網誌: http://mdecourse.github.io/2017springwcm/blog","tags":"misc","url":"./pages/about/"},{"title":"Week 4 內容","text":"","tags":"Course","url":"./week-4-nei-rong.html"}]};
